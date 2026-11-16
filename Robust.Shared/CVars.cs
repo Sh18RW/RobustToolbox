@@ -2208,5 +2208,27 @@ namespace Robust.Shared
         /// </summary>
         public static readonly CVarDef<bool> LoadingShowDebug =
             CVarDef.Create("loading.show_debug", DefaultShowDebug, CVar.CLIENTONLY);
+
+        /**
+         * Corvinella Changes.
+         */
+
+        public static readonly CVarDef<bool> NetProxyProtocolEnabled =
+            CVarDef.Create("net.proxy_protocol.enabled", false,
+                CVar.SERVERONLY | CVar.SERVER);
+
+        /// <summary>
+        /// Список доверенных прокси (IP или CIDR)
+        /// </summary>
+        public static readonly CVarDef<string> NetProxyProtocolTrustedProxies =
+            CVarDef.Create("net.proxy_protocol.trusted_proxies", "127.0.0.1/32,::1/128",
+                CVar.SERVERONLY | CVar.SERVER);
+
+        /// <summary>
+        /// Разрешать ли v1 заголовок. Лучше использовать v2.
+        /// </summary>
+        public static readonly CVarDef<bool> NetProxyProtocolAllowV1 =
+            CVarDef.Create("net.proxy_protocol.allow_v1", false,
+                CVar.SERVERONLY | CVar.SERVER);
     }
 }
